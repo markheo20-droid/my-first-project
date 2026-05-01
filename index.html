@@ -3,41 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bilrigo tset</title>
+    <title>빌리고 - 렌탈 가격 비교 플랫폼</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             margin: 0;
             padding: 0;
             min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        .hero {
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem 1rem;
         }
         .container {
             background: white;
-            padding: 3rem 4rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 3.5rem 3rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
             text-align: center;
+            max-width: 720px;
+            width: 100%;
+        }
+        .badge {
+            display: inline-block;
+            background: #eef0ff;
+            color: #5b6cff;
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
         }
         h1 {
-            color: #333;
+            color: #1a1a2e;
             margin: 0 0 1rem 0;
-            font-size: 2.5rem;
+            font-size: 2.75rem;
+            line-height: 1.2;
+            font-weight: 800;
         }
-        p {
+        h1 .highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .lead {
+            color: #555;
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin: 0 0 2rem 0;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 2rem 0 2.5rem;
+            text-align: left;
+        }
+        .feature {
+            background: #f7f8ff;
+            padding: 1.25rem;
+            border-radius: 10px;
+            border: 1px solid #eceefb;
+        }
+        .feature-title {
+            font-weight: 700;
+            color: #1a1a2e;
+            margin: 0 0 0.35rem;
+            font-size: 1rem;
+        }
+        .feature-desc {
             color: #666;
+            font-size: 0.9rem;
             margin: 0;
-            font-size: 1.1rem;
+            line-height: 1.45;
+        }
+        .cta-group {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.95rem 2rem;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
+        }
+        .btn-secondary {
+            background: white;
+            color: #5b6cff;
+            border: 2px solid #dfe3ff;
+        }
+        .btn-secondary:hover {
+            background: #f7f8ff;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 600px) {
+            .container { padding: 2.5rem 1.5rem; }
+            h1 { font-size: 2rem; }
+            .features { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>bilrigo tset</h1>
-        <p>환영합니다! 간단한 웹사이트입니다.</p>
-    </div>
+    <section class="hero">
+        <div class="container">
+            <span class="badge">렌탈 가격 비교 플랫폼</span>
+            <h1>필요한 모든 렌탈,<br><span class="highlight">빌리고</span>에서 한 번에 비교</h1>
+            <p class="lead">
+                정수기, 안마의자, 가전, 차량까지 — 흩어져 있는 렌탈 상품의 가격과 조건을
+                한 곳에서 비교하고 가장 합리적인 선택을 하세요.
+            </p>
+
+            <div class="features">
+                <div class="feature">
+                    <p class="feature-title">실시간 가격 비교</p>
+                    <p class="feature-desc">주요 렌탈사의 월 요금과 약정 조건을 한눈에 확인하세요.</p>
+                </div>
+                <div class="feature">
+                    <p class="feature-title">맞춤 추천</p>
+                    <p class="feature-desc">사용 기간과 예산에 맞는 최적의 렌탈 상품을 추천해드려요.</p>
+                </div>
+                <div class="feature">
+                    <p class="feature-title">투명한 정보</p>
+                    <p class="feature-desc">숨은 비용 없이 총 납부액과 위약금까지 모두 공개합니다.</p>
+                </div>
+            </div>
+
+            <div class="cta-group">
+                <a href="#start" class="btn btn-primary">무료로 가격 비교 시작하기</a>
+                <a href="#more" class="btn btn-secondary">서비스 더 알아보기</a>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
